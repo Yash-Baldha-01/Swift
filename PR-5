@@ -1,0 +1,98 @@
+import Foundation
+class Book {
+
+    var title: String
+
+    var author: String
+
+    var pages: Int
+
+    var price: Double {
+
+        didSet {
+
+            if price < 0 {
+
+                price = oldValue
+
+            }
+
+        }
+
+    }
+
+    var copies: Int
+
+    
+
+    init(_ title: String, _ author: String, _ pages: Int, _ price: Double, _ copies: Int) {
+
+        self.title = title
+
+        self.author = author
+
+        self.pages = pages
+
+        self.price = price
+
+        self.copies = copies
+
+    }
+
+    
+
+    func updateCopies(_ newCopies: Int) {
+
+        copies = newCopies
+
+    }
+
+    
+
+    func displayBookInfo() {
+
+        print("Title: \(title)")
+
+        print("Author: \(author)")
+
+        print("Pages: \(pages)")
+
+        print("Price: $\(price)")
+
+        print("Copies available: \(copies)")
+
+    }
+
+}
+
+
+
+// Create an object of the Book class and demonstrate property observer
+
+var myBook = Book("The Swift Programming Language", "Apple Inc.", 500, 29.99, 100)
+
+
+
+// Modify price with property observer
+
+myBook.price = 25.0
+
+
+
+// Display information about the book
+
+myBook.displayBookInfo()
+
+
+
+// Update the number of copies using the function
+
+myBook.updateCopies(150)
+
+
+
+// Display updated information about the book
+
+myBook.displayBookInfo()
+
+
