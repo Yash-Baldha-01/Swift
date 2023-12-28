@@ -1,0 +1,73 @@
+import Foundation
+class Book {
+
+    var title: String
+
+    var author: String
+
+    var pages: Int
+
+    var price: Double
+
+    var copies: Int
+
+    
+
+    init(title: String, author: String, pages: Int, price: Double) {
+
+        self.title = title
+
+        self.author = author
+
+        self.pages = pages
+
+        self.price = price
+
+        self.copies = 0
+
+    }
+
+    
+
+    func updateCopies(newCopies: Int) {
+
+        copies = newCopies
+
+    }
+
+    
+
+    func displayBookInfo() {
+
+        print("Title: \(title)")
+
+        print("Author: \(author)")
+
+        print("Pages: \(pages)")
+
+        print("Price: $\(price)")
+
+        print("Copies available: \(copies)")
+
+    }
+
+}
+
+
+
+// Create an object of the Book class
+
+let myBook = Book(title: "The Swift Programming Language", author: "Apple Inc.", pages: 500, price: 29.99)
+
+
+
+// Update the number of copies using the function
+
+myBook.updateCopies(newCopies: 100)
+
+
+
+// Display information about the book
+
+myBook.displayBookInfo()
+
