@@ -1,0 +1,92 @@
+import Foundation
+class Person {
+
+    var personName: String
+
+    var age: Int
+
+    var gender: String
+
+    var city: String
+
+    
+
+    init(personName: String, age: Int, gender: String, city: String) {
+
+        self.personName = personName
+
+        self.age = age
+
+        self.gender = gender
+
+        self.city = city
+
+    }
+
+    
+
+    func displayPersonInfo() {
+
+        print("Person Name: \(personName)")
+
+        print("Age: \(age)")
+
+        print("Gender: \(gender)")
+
+        print("City: \(city)")
+
+    }
+
+}
+
+
+
+class Player: Person {
+
+    var gameName: String
+
+    var numberOfGamesPlayed: Int
+
+    var rank: Int
+
+    
+
+    init(personName: String, age: Int, gender: String, city: String, gameName: String, numberOfGamesPlayed: Int, rank: Int) {
+
+        self.gameName = gameName
+
+        self.numberOfGamesPlayed = numberOfGamesPlayed
+
+        self.rank = rank
+
+        super.init(personName: personName, age: age, gender: gender, city: city)
+
+    }
+
+    
+
+    override func displayPersonInfo() {
+
+        super.displayPersonInfo()
+
+        print("Game Name: \(gameName)")
+
+        print("Number of Games Played: \(numberOfGamesPlayed)")
+
+        print("Rank: \(rank)")
+
+    }
+
+}
+
+
+
+// Create an object of the Player class
+
+let player1 = Player(personName: "John Doe", age: 25, gender: "Male", city: "New York", gameName: "Chess", numberOfGamesPlayed: 50, rank: 3)
+
+
+
+// Display information about the player
+
+player1.displayPersonInfo()
