@@ -1,0 +1,62 @@
+import Foundation
+func dateFromYearAndDays(year: Int, days: Int) -> String? {
+
+    let dateFormatter = DateFormatter()
+
+    dateFormatter.dateFormat = "dd MMM yyyy"
+
+    
+
+    // Create a calendar
+
+    var calendar = Calendar.current
+
+    calendar.firstWeekday = 1 // Sunday is 1, Monday is 2, etc.
+
+
+
+    // Create a date components instance
+
+    var dateComponents = DateComponents()
+
+    dateComponents.year = year
+
+    dateComponents.day = days
+
+    
+
+    // Calculate the date
+
+    if let date = calendar.date(from: dateComponents) {
+
+        return dateFormatter.string(from: date)
+
+    } else {
+
+        return nil
+
+    }
+
+}
+
+
+
+// Example usage
+
+let year = 2010
+
+let days = 100
+
+
+
+if let result = dateFromYearAndDays(year: year, days: days) {
+
+    print("Input: Year = \(year) and days = \(days)")
+
+    print("Output: \(result)")
+
+} else {
+
+    print("Invalid input. Please make sure the number of days is less than 365.")
+
+}
